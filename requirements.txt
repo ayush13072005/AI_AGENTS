@@ -1,0 +1,9 @@
+langchain
+langchain-core
+langchain-openai
+openai
+langchain-anthropic
+anthropic
+python-dotenv
+scikit-learn
+numpy

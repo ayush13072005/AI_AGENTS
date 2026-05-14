@@ -1,6 +1,6 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
-import os
+import streamlit as st
 
 load_dotenv()
 
@@ -12,5 +12,9 @@ llm = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=llm)
 
-result = model.invoke("What is the capital of Turkey?")
-print(result.content)
+st.header("Research Assistant")
+user_input = st.text_input("Enter your query:")
+if st.button("Summarize"):
+    response = model.invoke(user_input)
+    st.write("Response:")
+    st.write(response.content)

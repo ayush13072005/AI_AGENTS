@@ -1,7 +1,16 @@
-from langchain_openai import OpenAI
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
-model = OpenAI(model="gpt-3.5-turbo")
-result = model.invoke("What is the capital of France?")
-print(result)
+
+llm = HuggingFaceEndpoint(
+    repo_id="Qwen/Qwen2.5-72B-Instruct",
+    task="text-generation",
+    max_new_tokens=100
+)
+
+model = ChatHuggingFace(llm=llm)
+
+result = model.invoke("What is the capital of Turkey?")
+print(result.content)

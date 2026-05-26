@@ -14,6 +14,7 @@ llm = HuggingFaceEndpoint(
 model = ChatHuggingFace(llm=llm)
 
 st.header("Research Assistant")
+st.write("Select a research paper and specify your preferences for the explanation style and length. The assistant will provide a summary based on your selections.")
 paper_input = st.selectbox(
     "Select Research Paper Name",
     [
@@ -21,7 +22,9 @@ paper_input = st.selectbox(
         "Attention Is All You Need",
         "BERT: Pre-training of Deep Bidirectional Transformers",
         "GPT-3: Language Models are Few-Shot Learners",
-        "Diffusion Models Beat GANs on Image Synthesis"
+        "Diffusion Models Beat GANs on Image Synthesis",
+        "Neural Ordinary Differential Equations"
+        "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks"
     ]
 )
 

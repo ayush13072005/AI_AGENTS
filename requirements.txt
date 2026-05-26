@@ -4,6 +4,8 @@ langchain-huggingface
 huggingface-hub
 langchain-openai
 openai
+google-generativeai
+langchain-google-genai
 langchain-anthropic
 anthropic
 python-dotenv
